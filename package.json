@@ -9,6 +9,20 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.7.5"
+    "@fontsource-variable/playfair-display": "^5.2.5",
+    "@fontsource/lato": "^5.2.5",
+    "@tailwindcss/vite": "^4.1.4",
+    "astro": "^5.7.5",
+    "astro-icon": "^1.1.5",
+    "tailwindcss": "^4.1.4"
+  },
+  "devDependencies": {
+    "@iconify-json/hugeicons": "^1.2.4",
+    "@iconify-json/lucide": "^1.2.38",
+    "@iconify-json/map": "^1.2.2",
+    "@iconify-json/mdi": "^1.2.3",
+    "@iconify-json/solar": "^1.2.2",
+    "prettier": "3.5.3",
+    "prettier-plugin-astro": "0.14.1"
   }
 }
