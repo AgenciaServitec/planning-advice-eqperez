@@ -1,0 +1,50 @@
+[
+  {
+    "icon": "mdi:car",
+    "title": "Derecho Civil",
+    "description":
+    "Ofrecemos asesoría y patrocinio integral para la detección de posibles. riesgos transaccionales y de esta forma evitar posibles contingencias que perjudique los intereses de nuestros clientes."
+  },
+  {
+    "icon": "mdi:wallet-travel",
+    "title": "Derecho Corporativo",
+    "description":
+    "Ofrecemos asesoría y patrocinio integral para la detección de posibles. riesgos transaccionales y de esta forma evitar posibles contingencias que perjudique los intereses de nuestros clientes."
+  },
+  {
+    "icon": "mdi:handcuffs",
+    "title": "Derecho Penal",
+    "description":
+    "Consultoría, asesoría y patrocinio en delitos individuales, bandas y organizaciones criminales. Tráfico ilícito de drogas, lavado de activos, delitos ambientales y especializados en delitos cometidos por organizaciones criminales."
+  },
+  {
+    "icon": "solar:hand-money-linear",
+    "title": "Derecho Tributario",
+    "description":
+    "Procedimientos tributarios en sede administrativa y/o judicial, solicitudes de fraccionamiento, prescripción, devolución de impuestos, retenciones del IGV, pago de impuestos en exceso o indebidos, etc."
+  },
+  {
+    "icon": "map:courthouse",
+    "title": "Derecho Laboral",
+    "description":
+    "Relaciones laborales individuales. negociación colectiva, impuestos laborales y auditorias, contratación de personal, procedimientos de fiscalización, procedimientos administrativos y judiciales, etc"
+  },
+  {
+    "icon": "hugeicons:document-validation",
+    "title": "Derecho Aduanero y Migratorio",
+    "description":
+    "Obtención del camé de extranjería, prórroga de residencia, cambio de domicilio, regularización migratoria, permiso para firmar contratos, visa para trabajar en Perú, apostilla, obtención de la nacionalidad, etc."
+  },
+  {
+    "icon": "mdi:legal",
+    "title": "Solucion de Controversias",
+    "description":
+    "Patrocinamos en diferentes procesos judiciales en materia civil, laboral, administrativo, constitucional, penal."
+  },
+  {
+    "icon": "lucide:notebook-pen",
+    "title": "Derecho Municipal",
+    "description":
+    "Asesoramos en la obtención de autorizaciones, licencias y permisos administrativos. Elaboramos descargos a papeletas, resoluciones de sanción, procedimientos sancionadores en general"
+  }
+]
