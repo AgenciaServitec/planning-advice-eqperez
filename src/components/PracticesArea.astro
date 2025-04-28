@@ -1,0 +1,30 @@
+---
+import { Icon } from "astro-icon/components";
+import ContentWidth from "./ContentWidth.astro";
+import { practicesArea } from "../data-list";
+---
+
+<section>
+  <ContentWidth>
+    <div class="text-blue-50 text-center bg-black">
+      <div class="text-center py-10">
+        <h1 class="font-semibold text-2xl mt-2">Area de Practicas</h1>
+      </div>
+      <div
+        class="group grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 px-7 text-center"
+      >
+        {
+          practicesArea.map((service) => (
+            <div class="flex flex-col items-center space-y-3 px-4 py-5 transition-colors duration-300 hover:bg-gray-800 group">
+              <div class="bg-yellow-800 rounded-full p-4 transition-colors duration-300">
+                <Icon name={service.icon} width="50" height="50" />
+              </div>
+              <h3 class="font-semibold">{service.title}</h3>
+              <p class="text-xs">{service.description}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </ContentWidth>
+</section>
