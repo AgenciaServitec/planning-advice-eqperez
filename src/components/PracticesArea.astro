@@ -1,78 +1,7 @@
 ---
 import { Icon } from "astro-icon/components";
 import ContentWidth from "./ContentWidth.astro";
-
-const serviciosGrupo1 = [
-  {
-    icono: "mdi:car",
-    titulo: "Derecho Civil",
-    descripcion:
-      "Ofrecemos asesoría y patrocinio integral para la detección de\n" +
-      "            posibles. riesgos transaccionales y de esta forma evitar posibles\n" +
-      "            contingencias que perjudique los intereses de nuestros clientes.",
-  },
-  {
-    icono: "mdi:wallet-travel",
-    titulo: "Derecho Corporativo",
-    descripcion:
-      "Ofrecemos asesoría y patrocinio integral para la detección de\n" +
-      "            posibles. riesgos transaccionales y de esta forma evitar posibles\n" +
-      "            contingencias que perjudique los intereses de nuestros clientes.",
-  },
-  {
-    icono: "mdi:handcuffs",
-    titulo: "Derecho Penal",
-    descripcion:
-      "Consultoría, asesoría y patrocinio en delitos individuales, bandas y\n" +
-      "            organizaciones criminales. Tráfico ilícito de drogas, lavado de\n" +
-      "            activos, delitos ambientales y especializados en delitos cometidos\n" +
-      "            por organizaciones criminales.",
-  },
-  {
-    icono: "solar:hand-money-linear",
-    titulo: "Derecho Tributario",
-    descripcion:
-      "Procedimientos tributarios en sede administrativa y/o judicial,\n" +
-      "            solicitudes de fraccionamiento, prescripción, devolución de\n" +
-      "            impuestos, retenciones del IGV, pago de impuestos en exceso o\n" +
-      "            indebidos, etc.",
-  },
-];
-
-const serviciosGrupo2 = [
-  {
-    icono: "map:courthouse",
-    titulo: "Derecho Laboral",
-    descripcion:
-      "Relaciones laborales individuales. negociación colectiva, impuestos" +
-      "laborales y auditorias, contratación de personal, procedimientos de" +
-      "fiscalización, procedimientos administrativos y judiciales, etc",
-  },
-  {
-    icono: "hugeicons:document-validation",
-    titulo: "Derecho Aduanero y Migratorio",
-    descripcion:
-      "Obtención del camé de extranjería, prórroga de residencia, cambio de" +
-      "domicilio, regularización migratoria, permiso para firmar contratos," +
-      "visa para trabajar en Perú, apostilla, obtención de la nacionalidad," +
-      "etc.",
-  },
-  {
-    icono: "mdi:legal",
-    titulo: "Solucion de Controversias",
-    descripcion:
-      "Patrocinamos en diferentes procesos judiciales en materia civil," +
-      "laboral, administrativo, constitucional, penal.",
-  },
-  {
-    icono: "lucide:notebook-pen",
-    titulo: "Derecho Municipal",
-    descripcion:
-      "Asesoramos en la obtención de autorizaciones, licencias y permisos" +
-      "administrativos. Elaboramos descargos a papeletas, resoluciones de" +
-      "sanción, procedimientos sancionadores en general",
-  },
-];
+import { practicesArea } from "../data-list";
 ---
 
 <section>
@@ -81,36 +10,17 @@ const serviciosGrupo2 = [
       <div class="text-center py-10">
         <h1 class="font-semibold text-2xl mt-2">Area de Practicas</h1>
       </div>
-
-      <!-- Primer grupo de tarjetas -->
       <div
         class="group grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 px-7 text-center"
       >
         {
-          serviciosGrupo1.map((servicio) => (
+          practicesArea.map((service) => (
             <div class="flex flex-col items-center space-y-3 px-4 py-5 transition-colors duration-300 hover:bg-gray-800 group">
               <div class="bg-yellow-800 rounded-full p-4 transition-colors duration-300">
-                <Icon name={servicio.icono} width="50" height="50" />
+                <Icon name={service.icon} width="50" height="50" />
               </div>
-              <h3 class="font-semibold">{servicio.titulo}</h3>
-              <p class="text-xs">{servicio.descripcion}</p>
-            </div>
-          ))
-        }
-      </div>
-
-      <!-- Segundo grupo de tarjetas -->
-      <div
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 px-7 text-center"
-      >
-        {
-          serviciosGrupo2.map((servicio) => (
-            <div class="flex flex-col items-center space-y-3 px-4 py-5 transition-colors duration-300 hover:bg-gray-800 group">
-              <div class="bg-yellow-800 rounded-full p-4 transition-colors duration-300">
-                <Icon name={servicio.icono} width="50" height="50" />
-              </div>
-              <h3 class="font-semibold">{servicio.titulo}</h3>
-              <p class="text-xs">{servicio.descripcion}</p>
+              <h3 class="font-semibold">{service.title}</h3>
+              <p class="text-xs">{service.description}</p>
             </div>
           ))
         }
