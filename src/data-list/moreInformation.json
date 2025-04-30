@@ -1,0 +1,20 @@
+[
+{
+    "type": "Ubicación",
+    "icon": "mdi:map-marker-radius-outline",
+    "content": "Av. Carlos Izaguirre N° 216 (Galería 'San Lázaro')",
+    "link": "https://maps.app.goo.gl/jS5uMJA8N44rkE8F7"
+  },
+  {
+    "type": "Teléfono",
+    "icon": "mdi:cellphone",
+    "content": ["928 167 202", "970 417 920"],
+    "link": ""
+  },
+  {
+    "type": "Gmail",
+    "icon": "mdi:email-newsletter",
+    "content": "abogados.corporativo.planning@gmail.com",
+    "link": ""
+  }
+]
