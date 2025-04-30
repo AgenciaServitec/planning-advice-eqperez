@@ -1,0 +1,28 @@
+---
+import ContentWidth from "./ContentWidth.astro";
+import {features} from  "../data-list/"
+import { Icon } from "astro-icon/components";
+
+---
+
+<div class="bg-gray-200">
+  <ContentWidth>
+    <section class="md:p-6 p-2 lg:p-8 text-center  text-[#1f3557] justify-items-center w-full pt-20">
+      <h2 class="md:text-5xl text-4xl font-serif mb-6 ">
+        LO QUE NOS HACE ÚNICOS
+      </h2>
+      <div class="w-24 h-[0.1em] bg-yellow-400 mb-4"></div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 py-10 px-4">
+        {features.map((feature) => (
+          <div class="flex flex-col items-center text-center space-y-4 shadow-lg bg-white md:px-14 md:py-10 py-8 px-5 md:w-96">
+            <Icon name={feature.icon} width="60" height="80" />
+
+            <h3 class="text-lg font-serif font-bold">{feature.title}</h3>
+            <p class="text-pretty font-serif text-[17px]">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  </ContentWidth>
+</div>
+

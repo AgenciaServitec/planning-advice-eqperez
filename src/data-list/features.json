@@ -1,0 +1,17 @@
+[
+  {
+    "icon": "mdi:account-search-outline",
+    "title": "¿QUIÉNES SOMOS?",
+    "description": "Somos una empresa que nace con la intención de revolucionar y mejorar el campo legal de todas las áreas, mediante la incorporación de un bufete de abogados especialistas que garantizan los derechos de nuestros clientes y empresas en general."
+  },
+  {
+    "icon": "mdi:certificate-outline",
+    "title": "VISIÓN",
+    "description": "Ser líderes en el mercado legal peruano, con trascendencia internacional. Posicionamos como la mejor firma de prestación de servicios profesionales, con presencia en todas las regiones del pais."
+  },
+  {
+    "icon": "mdi:account-tie",
+    "title": "MISIÓN",
+    "description": "Concentrar un centro de servicios legales especializados, brindando soluciones integrales y personalizadas, bajo el contexto de los mejores estándares de calidad en el servicio"
+  }
+]
