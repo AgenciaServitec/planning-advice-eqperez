@@ -1,0 +1,57 @@
+---
+import { Icon } from "astro-icon/components";
+import ContentWidth from "../components/ContentWidth.astro";
+
+const areas = [
+  "Derecho Civil",
+  "Derecho Laboral",
+  "Derecho Penal",
+  "Derecho Aduanero y Migratorio",
+  "Derecho Corporativo y Societario",
+  "Derecho Municipal",
+  "Derecho Tributario",
+  "Solución de Controversias",
+];
+---
+
+<section>
+  <ContentWidth>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 py-10">
+      <div>
+        <h1 class="text-4xl">IMAGEN</h1>
+      </div>
+      <div class="flex flex-col items-start gap-6">
+        <p class="text-4xl">TE OFRECEMOS...</p>
+        <div class="text-4xl">
+          <div class="h-0.5 w-[2em] bg-yellow-600"></div>
+        </div>
+        <p>
+          Nuestros servicios se caracterizan en obtener soluciones integrales,
+          que dinamicen y estabilicen el estado económico de nuestros
+          patrocinados. Trabajamos con objetivos viables, y perseveramos hasta
+          cumplirios. Somos leales a nuestra palabra y compromisos que asumimos.
+          Dirigimos todas nuestras gestiones a un resultado eficiente y eficaz
+          no solo para nuestros clientes, sino para la sociedad y el desarrollo
+          sostenible.
+        </p>
+        <ul class="grid grid-cols-2 md:gid-cols-1 gap-2">
+          {
+            areas.map((area) => (
+              <li class="flex gap-2">
+                <Icon name="mdi:check" size={30} color="#d08700" />
+                {area}
+              </li>
+            ))
+          }
+        </ul>
+
+        <button
+          class="flex items-center px-4 py-2 gap-2 bg-yellow-600 text-white hover:bg-yellow-500"
+        >
+          <span>CONSULTANOS GRATIS</span>
+          <Icon name="mdi:arrow-right" size={30} />
+        </button>
+      </div>
+    </div>
+  </ContentWidth>
+</section>
