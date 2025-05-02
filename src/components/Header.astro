@@ -2,11 +2,13 @@
 import ContentWidth from "./ContentWidth.astro";
 ---
 
-<header class="w-full fixed top-0 left-0 z-50">
+<header id="header" class="hidden md:block w-full fixed top-0 left-0 z-50">
   <ContentWidth>
     <div class="flex justify-between items-center p-4">
       <div class="flex items-center gap-6">
-        <img src="/logo.webp" alt="Logo de Planning Advice EQPerez S.A.C." />
+        <a href="/">
+          <img src="/logo.webp" alt="Logo de Planning Advice EQPerez S.A.C." />
+        </a>
         <nav class="text-secondary">
           <ul class="flex gap-4">
             <li><a href="/">Inicio</a></li>
@@ -15,7 +17,27 @@ import ContentWidth from "./ContentWidth.astro";
           </ul>
         </nav>
       </div>
-      <a href="/contact" class="bg-accent px-4 py-2">Contactanos</a>
+      <a href="/contact" class="bg-accent text-neutral px-4 py-2">Contactanos</a
+      >
     </div>
   </ContentWidth>
 </header>
+
+<script>
+  const header = document.querySelector("#header") as HTMLElement;
+  const nav = document.querySelector("nav") as HTMLElement;
+  const image = document.querySelector("img") as HTMLImageElement;
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 110) {
+      header.classList.add("bg-white");
+      nav.classList.remove("text-secondary");
+      nav.classList.add("text-primary");
+      image.src = "/logo2.png";
+    } else {
+      header.classList.remove("bg-white");
+      nav.classList.add("text-secondary");
+      image.src = "/logo.webp";
+    }
+  });
+</script>
