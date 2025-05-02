@@ -3,9 +3,9 @@ import ContentWidth from "./ContentWidth.astro";
 import { moreInformation } from "../data-list";
 import { Icon } from "astro-icon/components";
 ---
-
+<div class="bg-gray-200">
 <ContentWidth>
-  <section class="w-full mt-20 text-center text-[#1f3557] p-4 sm:p-6 lg:p-8">
+  <section class="w-full text-center text-[#1f3557] p-4 sm:p-6 lg:px-8 lg:pt-25">
     <h2 class="text-4xl sm:text-5xl font-serif mb-6">
       MÁS INFORMACIÓN
     </h2>
@@ -28,7 +28,7 @@ import { Icon } from "astro-icon/components";
               </a>
             ) : (
               <a href={`mailto:${item.content}`} target="_blank">
-                <p class="text-[#1f3557]">{item.content}</p>
+                <p class="text-[#1f3557] text-pretty break-words">{item.content}</p>
               </a>
             )
           )}
@@ -37,3 +37,4 @@ import { Icon } from "astro-icon/components";
     </div>
   </section>
 </ContentWidth>
+</div>

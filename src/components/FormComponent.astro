@@ -1,0 +1,166 @@
+---
+import ContentWidth from "./ContentWidth.astro";
+---
+<div class="bg-gray-200">
+  <ContentWidth>
+    <section class="w-full pt-25 flex items-center justify-center">
+      <form
+        id="contactForm"
+        class="w-full max-w-6xl bg-white p-6 md:p-10 rounded-3xl shadow-xl space-y-8"
+      >
+        <h2 class="text-4xl sm:text-5xl text-[#1f3557] text-center font-serif mb-6">
+          ENVÍANOS TU MENSAJE
+        </h2>
+        <div class="w-24 h-[0.1em] bg-yellow-400 mb-4 mx-auto "></div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+          <div class="flex flex-col">
+            <label for="fullName" class="text-lg font-medium text-gray-800">Tu Nombre</label>
+            <input
+              type="text"
+              id="fullName"
+              name="fullName"
+              required
+              class="px-6 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300"
+            />
+          </div>
+
+          <div class="flex flex-col">
+            <label for="message" class="text-lg font-medium text-gray-800">Mensaje</label>
+            <input
+              type="text"
+              id="message"
+              name="message"
+              required
+              class="px-6 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300"
+            />
+          </div>
+
+          <div class="flex flex-col">
+            <label for="email" class="text-lg font-medium text-gray-800">Correo</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              class="px-6 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300"
+            />
+          </div>
+
+          <div class="flex flex-col">
+            <label for="phone" class="text-lg font-medium text-gray-800">Teléfono</label>
+            <input
+              type="text"
+              id="phone"
+              name="phone"
+              required
+              class="px-6 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300"
+            />
+          </div>
+        </div>
+
+        <div>
+          <button
+            id="button"
+            type="submit"
+            class="w-full py-3 px-6 bg-accent text-white font-semibold rounded-lg shadow-md hover:brightness-110 hover:cursor-pointer transition-all duration-300 transform"
+          >
+            Envíar Mensaje
+          </button>
+        </div>
+        <h2 id="response" class="text-center text-bold text-xl "></h2>
+      </form>
+    </section>
+  </ContentWidth>
+</div>
+
+<script is:inline>
+  const form = document.getElementById("contactForm");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const fullName = document.getElementById("fullName").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const phoneNumber = document.getElementById("phone").value.trim();
+    const message = document.getElementById("message").value.trim();
+    const button = document.getElementById("button");
+    const response = document.getElementById("response");
+
+    const contact = {
+      fullName,
+      email,
+      phone: {
+        countryCode: "+51",
+        number: phoneNumber,
+      },
+      message,
+      hostname: "corporativoplanning.com",
+    };
+
+    function showResponse(text, isError = false) {
+      response.textContent = text;
+      response.classList.remove("hidden");
+
+      response.classList.remove(
+        "text-green-600", "bg-green-100", "border-green-300",
+        "text-red-600", "bg-red-100", "border-red-300"
+      );
+
+      if (isError) {
+        response.classList.add("text-red-600", "bg-red-100", "border", "border-red-300", "p-4", "rounded");
+      } else {
+        response.classList.add("text-green-600", "bg-green-100", "border", "border-green-300", "p-4", "rounded");
+      }
+
+      setTimeout(() => {
+        response.classList.add("hidden");
+        response.textContent = "";
+      }, 5000);
+    }
+
+
+    try {
+      button.disabled = true;
+      button.textContent = "Cargando...";
+      button.classList.add("opacity-60", "cursor-not-allowed");
+
+      const res = await fetch("https://api-servitecsales.web.app/emails/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({ contact }),
+      });
+
+      const contentType = res.headers.get("content-type");
+
+      if (!res.ok) {
+        const errorText = await res.text();
+        console.error("Error del servidor:", errorText);
+        showResponse("Error del servidor")
+        return;
+      }
+      if (contentType && contentType.includes("application/json")) {
+        const data = await res.json();
+        console.log("Respuesta JSON:", data);
+      } else {
+        const text = await res.text();
+        console.log("Respuesta texto:", text);
+      }
+
+      showResponse("Mensaje enviado con éxito")
+      form.reset();
+
+    } catch (error) {
+      console.error("Error:", error);
+      showResponse("Hubo un problema al enviar el mensaje", true)
+    }finally {
+      button.disabled = false;
+      button.textContent = "Envíar Mensaje";
+      button.classList.remove("opacity-60", "cursor-not-allowed");
+    }
+
+  });
+</script>
