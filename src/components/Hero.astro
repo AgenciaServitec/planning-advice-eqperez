@@ -2,10 +2,14 @@
 import ContentWidth from "./ContentWidth.astro";
 ---
 
-<section class="w-full h-svh relative">
-  <ContentWidth>
-    <div class="w-full h-svh bg-green-400">
-      <h2>Hero</h2>
-    </div>
-  </ContentWidth>
+<section
+  class="w-full h-svh relative bg-[url('https://i.pinimg.com/originals/67/d4/ca/67d4cac7521a3dcc36091aa5dc2c6fe2.jpg')] bg-cover bg-center"
+>
+  <div class="w-full h-full bg-primary opacity-50">
+    <ContentWidth>
+      <div class="w-full h-svh flex justify-center items-center text-neutral">
+        <h2>Hero</h2>
+      </div>
+    </ContentWidth>
+  </div>
 </section>
