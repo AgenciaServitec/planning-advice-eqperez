@@ -1,0 +1,39 @@
+---
+import ContentWidth from "./ContentWidth.astro";
+import { moreInformation } from "../data-list";
+import { Icon } from "astro-icon/components";
+---
+
+<ContentWidth>
+  <section class="w-full mt-20 text-center text-[#1f3557] p-4 sm:p-6 lg:p-8">
+    <h2 class="text-4xl sm:text-5xl font-serif mb-6">
+      MÁS INFORMACIÓN
+    </h2>
+    <div class="w-24 h-[0.1em] bg-yellow-400 mb-4 mx-auto"></div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-10 px-2 sm:px-4">
+      {moreInformation.map((item, index) => (
+        <div class="py-10 px-4 rounded-lg shadow-lg bg-white border border-gray-300" key={index}>
+          <Icon name={item.icon} width="60" height="80" class="mx-auto text-[#1f3557]" />
+          <h3 class="mt-4 font-serif font-bold text-[#1f3557] mb-2">{item.type}</h3>
+          {Array.isArray(item.content) ? (
+            item.content.map((line, i) => (
+              <a href={`tel:${line}`} key={i}>
+                <p class="text-[#1f3557]">{line}</p>
+              </a>
+            ))
+          ) : (
+            item.type === "Ubicación" ? (
+              <a href={item.link} target="_blank">
+                <p class="text-[#1f3557]">{item.content}</p>
+              </a>
+            ) : (
+              <a href={`mailto:${item.content}`} target="_blank">
+                <p class="text-[#1f3557]">{item.content}</p>
+              </a>
+            )
+          )}
+        </div>
+      ))}
+    </div>
+  </section>
+</ContentWidth>

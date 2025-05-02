@@ -1,0 +1,39 @@
+---
+import ContentWidth from "./ContentWidth.astro";
+const aboutUsContent = {
+  image: "/images/aboutUsImage.jpg",
+  title: "SOMOS ESPECIALISTAS",
+  description:
+    "Nuestro estudio de abogados ofrece a los clientes asesoría legal especializada, a través de nuestro staff de abogados altamente capacitados y con experiencia en las diversas áreas del derecho. Brindamos asesoría jurídica  de la más alta calidad, personalizando la relación con nuestros clientes, generándoles seguridad y comodidad, logrando formar, de esta manera, relaciones de estrecha confianza y de largo plazo.",
+  notification:
+    "Nosotros nos encargaremos de solucionar tus problemas. ¡Comuníquese con Nosotros!",
+};
+---
+
+<div class="bg-gray-200 md:p-6 lg:p-8">
+  <ContentWidth>
+    <section class="w-full flex flex-col md:flex-row bg-white shadow-lg overflow-hidden ">
+      <div class="md:w-1/2">
+        <img
+          src={aboutUsContent.image}
+          alt="Abogado trabajando"
+          class="md:w-[40em] w-full md:h-[37em] h-[25em] object-cover md:m-4"
+        />
+      </div>
+      <div class="md:w-1/2 py-8 md:px-16 px-2 flex flex-col justify-center">
+        <h2 class="md:text-5xl text-4xl font-serif text-[#1f3557] mb-6 w-10">
+          {aboutUsContent.title}
+        </h2>
+        <div class="w-24 h-[0.1em] bg-yellow-400 mb-4"></div>
+        <p class="text-gray-700 mb-6 text-pretty">{aboutUsContent.description}</p>
+        <div class="border border-yellow-400 bg-yellow-50 p-4 rounded-md flex justify-between items-center">
+          <p class="text-yellow-400 font-medium">{aboutUsContent.notification}</p>
+          <a href="/contact" class="bg-yellow-400 hover:bg-yellow-500 text-white font-bold px-4 py-2 rounded-full ml-4 transition">
+            →
+          </a>
+        </div>
+      </div>
+    </section>
+  </ContentWidth>
+</div>
+
