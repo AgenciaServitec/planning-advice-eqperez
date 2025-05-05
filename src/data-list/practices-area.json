@@ -9,7 +9,7 @@
     "icon": "mdi:wallet-travel",
     "title": "Derecho Corporativo",
     "description":
-    "Ofrecemos asesoría y patrocinio integral para la detección de posibles. riesgos transaccionales y de esta forma evitar posibles contingencias que perjudique los intereses de nuestros clientes."
+    "Redacción y modificación de estatutos, creación de empresas, convenio de accionistas, reorganización de empresas, fusiones, reestructuración, liquidación y disolución de empresa."
   },
   {
     "icon": "mdi:handcuffs",
@@ -24,7 +24,7 @@
     "Procedimientos tributarios en sede administrativa y/o judicial, solicitudes de fraccionamiento, prescripción, devolución de impuestos, retenciones del IGV, pago de impuestos en exceso o indebidos, etc."
   },
   {
-    "icon": "map:courthouse",
+    "icon": "mdi:court-hammer",
     "title": "Derecho Laboral",
     "description":
     "Relaciones laborales individuales. negociación colectiva, impuestos laborales y auditorias, contratación de personal, procedimientos de fiscalización, procedimientos administrativos y judiciales, etc"
@@ -45,6 +45,6 @@
     "icon": "lucide:notebook-pen",
     "title": "Derecho Municipal",
     "description":
-    "Asesoramos en la obtención de autorizaciones, licencias y permisos administrativos. Elaboramos descargos a papeletas, resoluciones de sanción, procedimientos sancionadores en general"
+    "Asesoramos en la obtención de autorizaciones, licencias y permisos administrativos. Elaboramos descargos a papeletas, resoluciones de sanción, procedimientos sancionadores en general."
   }
 ]
