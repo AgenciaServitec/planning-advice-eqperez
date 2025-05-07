@@ -1,59 +1,94 @@
 ---
-import ContentWidth from "./ContentWidth.astro";
-
+import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
+
+import ContentWidth from "./ContentWidth.astro";
 ---
 
-<footer>
+<footer class="pt-20 pb-4">
   <ContentWidth>
-    <div
-      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 text-left py-5 bg-white text-black border-b-1 mb-3"
-    >
-      <div class="flex flex-col py-5">
-        <h1 class="font-bold mb-2">Logo</h1>
-        <h3>
-          Somos un equipo especializado en el asesoramiento a empresas o
-          personas naturales.
-        </h3>
-      </div>
-      <div class="flex flex-col py-5">
-        <h1 class="font-bold mb-2">Enlaces</h1>
-        <ul class="flex flex-col gap-2">
-          <li>Inicio</li>
-          <li>Nosotros</li>
-          <li>Servicios</li>
-          <li>Contactanos</li>
-        </ul>
-      </div>
-      <div class="flex flex-col py-5">
-        <h1 class="font-bold mb-2">Dirección</h1>
-        <p>Psj. San Martin N° 154 Mz. D It. 01 Oficina N°401 (4to piao)</p>
-      </div>
-      <div class="flex flex-col py-5">
-        <h1 class="font-bold mb-2">Redes Sociales</h1>
-        <div class="flex gap-4">
-          <div
-            class="w-10 h-10 text-black flex items-center justify-center border-1"
-          >
-            <Icon name="mdi:facebook" size={30} />
-          </div>
-          <div
-            class="w-10 h-10 text-black flex items-center justify-center border-1"
-          >
-            <Icon name="mdi:twitter" size={30} />
-          </div>
-          <div
-            class="w-10 h-10 text-black flex items-center justify-center border-1"
-          >
-            <Icon name="mdi:linkedin" size={30} />
+    <section class="space-y-4">
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 bg-white text-black"
+      >
+        <div class="space-y-4">
+          <a href="/" class="flex">
+            <Image
+              src="/logo2.png"
+              alt="Logo de Planning Advice EQPerez S.A.C."
+              width="150"
+              height="100"
+              loading="lazy"
+            />
+          </a>
+          <p>
+            Somos un equipo especializado en el asesoramiento a empresas o
+            personas naturales.
+          </p>
+        </div>
+        <div class="space-y-2">
+          <h3 class="font-bold">Páginas</h3>
+          <ul>
+            <li>Inicio</li>
+            <li>Nosotros</li>
+            <li>Servicios</li>
+            <li>Contactanos</li>
+          </ul>
+        </div>
+        <div class="space-y-2">
+          <h3 class="font-bold">Información</h3>
+          <ul>
+            <li>
+              <a href="tel:948122795" target="_blank" class="flex gap-2">
+                <Icon name="mdi:phone" size={20} />
+                <span>948122795</span></a
+              >
+            </li>
+            <li>
+              <a href="tel:016780192" target="_blank" class="flex gap-2">
+                <Icon name="mdi:phone-classic" size={20} />
+                <span>016780192</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="mailto:abogados.corporativo.planning@gmail.com"
+                class="flex gap-2"
+              >
+                <Icon name="mdi:email" size={20} />
+                <span>abogados.corporativo.planning @gmail.com</span>
+              </a>
+            </li>
+            <li>
+              <a href="" target="_blank" class="flex gap-2">
+                <Icon name="mdi:location" size={20} class="/" />
+                <span
+                  >Psj. San Martin N° 154 Mz. D It. 01 Oficina N°401 (4to piso)</span
+                >
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="space-y-2">
+          <h3 class="font-bold">Redes Sociales</h3>
+          <div class="flex gap-4">
+            <div class="w-10 h-10 flex justify-center items-center border">
+              <Icon name="mdi:facebook" size={30} />
+            </div>
+            <div class="w-10 h-10 flex justify-center items-center border">
+              <Icon name="mdi:twitter" size={30} />
+            </div>
+            <div class="w-10 h-10 flex justify-center items-center border">
+              <Icon name="mdi:linkedin" size={30} />
+            </div>
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="flex justify-between pt-2 pb-5">
-      <h1>Copyright 2025, Servitec Peru. Todos los derechos reservados</h1>
-      <h1>Hecho con ❤️</h1>
-    </div>
+      <hr class="text-accent" />
+      <div class="flex flex-col md:flex-row justify-between text-sm">
+        <p>Copyright 2025, Servitec Peru. Todos los derechos reservados</p>
+        <p>Hecho con ❤️</p>
+      </div>
+    </section>
   </ContentWidth>
 </footer>
