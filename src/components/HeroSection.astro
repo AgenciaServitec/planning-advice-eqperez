@@ -1,0 +1,23 @@
+---
+import ContentWidth from "./ContentWidth.astro";
+
+interface Props {
+  title: string;
+}
+
+const { title = "Planning & Advice EQPerez S.A.C." } = Astro.props;
+---
+
+<section
+  class="bg-[url('https://sololideres.com.ar/storage/3734fb7370a07e702ffaa06d50b0f836.jpg')]"
+>
+  <div class="w-full h-full bg-primary-light">
+    <ContentWidth>
+      <div class="w-full h-[50svh] flex justify-center items-center">
+        <h2 class="font-playfair-display text-6xl text-secondary uppercase">
+          {title}
+        </h2>
+      </div>
+    </ContentWidth>
+  </div>
+</section>
